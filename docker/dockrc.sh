@@ -1,12 +1,12 @@
 
-function cleos() {
-  docker-compose exec keosd cleos -u http://nodeosd:8888 --wallet-url http://localhost:8900 "$@"
+function clroxe() {
+  docker-compose exec kroxed clroxe -u http://nodroxed:8888 --wallet-url http://localhost:8900 "$@"
 }
 
-function keosd() {
-  docker exec docker_nodeosd_1 keosd "$@"
+function kroxed() {
+  docker exec docker_nodroxed_1 kroxed "$@"
 }
 
 function pkill() {
-  docker exec docker_nodeosd_1 pkill "$@"
+  docker exec docker_nodroxed_1 pkill "$@"
 }

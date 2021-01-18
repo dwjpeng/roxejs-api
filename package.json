@@ -1,7 +1,7 @@
 {
-  "name": "eosjs-api",
-  "version": "7.0.4",
-  "description": "Application programming interface to EOS blockchain nodes.",
+  "name": "roxejs-api",
+  "version": "1.0.0",
+  "description": "Application programming interface to ROXE blockchain nodes.",
   "main": "lib/index.js",
   "files": [
     "README.md",
@@ -15,41 +15,41 @@
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "build": "npm run build_lib && npm run build_browser",
     "build_lib": "rm -fr lib/* && babel --copy-files src --out-dir lib",
-    "build_browser": "mkdir -p lib && browserify -o lib/eos-api.js -s EosApi lib/index.js",
+    "build_browser": "mkdir -p lib && browserify -o lib/roxe-api.js -s RoxeApi lib/index.js",
     "build_browser_test": "npm run build && browserify -o dist/test.js lib/*.test.js",
-    "minimize": "uglifyjs lib/eos-api.js -o lib/eos-api.min.js --source-map --compress --mangle",
+    "minimize": "uglifyjs lib/roxe-api.js -o lib/roxe-api.min.js --source-map --compress --mangle",
     "helperDocs": "jsdoc2md src/exported-helpers.js src/process-args.js > docs/index.md",
     "apiDocs": "./bin/api-docs.js > lib/api-jsdocs.js && jsdoc2md lib/api-jsdocs.js > docs/api.md",
     "docs": "npm run apiDocs && npm run helperDocs",
-    "srisum": "npx srisum lib/eos-api.*",
+    "srisum": "npx srisum lib/roxe-api.*",
     "prepublishOnly": "npm run build && npm run test_lib && npm run minimize && npm run docs && npm run srisum"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EOSIO/eosjs-api.git"
+    "url": "git+https://github.com/ROXE-Net/roxejs-api.git"
   },
   "keywords": [
-    "EOS",
+    "ROXE",
     "Blockchain",
     "API"
   ],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EOSIO/eosjs-api/issues"
+    "url": "https://github.com/ROXE-Net/roxejs-api/issues"
   },
-  "homepage": "https://github.com/EOSIO/eosjs-api#readme",
+  "homepage": "https://github.com/ROXE-Net/roxejs-api#readme",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-preset-es2015": "6.24.1",
     "bluebird": "3.5.0",
     "browserify": "16.2.2",
-    "uglify-js": "3.4.5",
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^4.0.1",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "uglify-js": "3.4.5"
   },
   "dependencies": {
     "camel-case": "^3.0.0",

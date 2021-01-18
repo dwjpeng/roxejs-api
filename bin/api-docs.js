@@ -65,7 +65,7 @@ function outJsDoc(tag, params, paramNames) {
 outln('// Generated file, see bin/api-docs.js')
 
 out('/** @namespace */')
-outln('var eos = {}')
+outln('var roxe = {}')
 
 out(`/** @typedef {Buffer|hex} bytes  */`)
 outln()
@@ -90,7 +90,7 @@ for(const version in api) {
       }
 
       out('@async')
-      out('@memberof eos')
+      out('@memberof roxe')
       out()
 
       const paramNames = []
@@ -112,11 +112,11 @@ for(const version in api) {
 
       if(params) {
         out('@example ```js')
-        out(`eos.${functionName}(${paramNames.join(', ')})`)
+        out(`roxe.${functionName}(${paramNames.join(', ')})`)
         outln('```')
       } else {
         out('@example ```js')
-        out(`eos.${functionName}({})`)
+        out(`roxe.${functionName}({})`)
         outln('```')
       }
 

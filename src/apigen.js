@@ -7,7 +7,7 @@ module.exports = apiGen
 
 function apiGen (version, definitions, config = {}) {
   const configDefaults = {
-    httpEndpoint: 'http://127.0.0.1:8888',
+    httpEndpoint: 'http://172.17.3.161:7878',
     verbose: false,
     logger: {
       log: (...args) => config.verbose ? console.log(...args) : null,
@@ -96,7 +96,7 @@ function fetchMethod (methodName, url, definition, config) {
     .catch(error => {
       let message = ''
       try {
-        // nodeos format (fail safe)
+        // nodroxe format (fail safe)
         message = JSON.parse(error.message).error.details[0]
       } catch(e2) {}
 

@@ -2,28 +2,28 @@ const api = require('./api/v1')
 const apiGen = require('./apigen')
 const processArgs = require('./process-args')
 
-const EosApi = function(config) {
+const RoxeApi = function(config) {
   return apiGen('v1', api, config)
 }
 
 Object.assign(
-  EosApi,
+  RoxeApi,
   {
     processArgs,
     api,
 
     /** @deprecated */
     Testnet: function (config) {
-      console.error('deprecated, change EosApi.Testnet(..) to just EosApi(..)')
-      return EosApi(config)
+      console.error('deprecated, change RoxeApi.Testnet(..) to just RoxeApi(..)')
+      return RoxeApi(config)
     },
 
     /** @deprecated */
     Localnet: function (config) {
-      console.error('deprecated, change EosApi.Localnet(..) to just EosApi(..)')
-      return EosApi(config)
+      console.error('deprecated, change RoxeApi.Localnet(..) to just RoxeApi(..)')
+      return RoxeApi(config)
     }
   }
 )
 
-module.exports = EosApi
+module.exports = RoxeApi

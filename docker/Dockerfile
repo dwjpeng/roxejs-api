@@ -1,1 +1,1 @@
-FROM eosio/eos:v1.1.4
+FROM roxe/roxe:v1.1.4
